@@ -1,0 +1,322 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Sistema de Cadastro Unico</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Sistema de Cadastro Unico</a>
+                        </li>
+                    </ul>
+
+</div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">CADASTRO DE CLIENTE</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <form action="#" class="form-horizontal">
+                            <fieldset>
+                                <legend>Dados Pessoais</legend>
+
+                                <div class="form-group">
+                                    <label for="IdCliente" class="col-sm-2 control-label">IdCliente</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="IdCliente">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Documento" class="col-sm-2 control-label">Documento</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="Documento">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome" class="col-sm-2 control-label">Nome</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="nome">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Sexo</label>
+                                    <div class="col-sm-4">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="sexo" id="Feminino" value="F"> Feminino
+                                        </label>
+
+                                        <label class="radio-inline">
+                                            <input type="radio" name="sexo" id="Masculino" value="M"> Masculino
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Contato</legend>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefone" class="col-sm-2 control-label">Telefone</label>
+                                    <div class="col-sm-4">
+                                        <input type="tel" class="form-control" id="telefone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fax" class="col-sm-2 control-label">Fax</label>
+                                    <div class="col-sm-4">
+                                        <input type="tel" class="form-control" id="fax">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="uf" class="col-sm-2 control-label">UF</label>
+                                    <div class="col-sm-4">
+                                        <select class="form-control" name="uf" id="uf">
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AM">AM</option>
+                                            <option value="AP">AP</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MG">MG</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MT">MT</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="PR">PR</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="RS">RS</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SE">SE</option>
+                                            <option value="SP">SP</option>
+                                            <option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <button type="button" class="btn btn-primary" onclick="javascript:SalvarCadastro();">
+                                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Gravar
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">CLIENTES CADASTRADOS</h3>
+            </div>
+
+            <div class="panel-body">
+                <a data-toggle="modal" data-target="#myModal" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo
+                </a>
+                <div class="table-responsive">
+                    <table id="ListaCadastro" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>DOCUMENTO</th>
+                                <th>NOME</th>
+                                <th>EMAIL</th>
+                                <th>TELEFONE</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        ListarClientes();
+
+        function SalvarCadastro() {
+
+            var Clientes = {};
+
+            Clientes.idCliente = $("#IdCliente").val();
+            Clientes.documento = $("#Documento").val();
+            Clientes.nome = $("#nome").val();
+            Clientes.email = $("#email").val();
+            Clientes.telefone = $("#telefone").val();
+            Clientes.fax = $("#fax").val();
+            Clientes.uf = $("#uf").val();
+            Clientes.sexo = $('input[name="sexo"]:checked').val();
+
+            var validar = 1;
+
+            if (Clientes.documento == "") {
+                validar = 0;
+                alert('O campo documento é obrigatório');
+                $("#Documento").css("background-color", "red");
+            }
+
+            if (Clientes.nome == "") {
+                alert('O campo Nome é obrigatório');
+                $("#nome").css("background-color", "red");
+                validar = 0;
+            }
+
+            if (validar == 1) {
+                $.ajax({
+                    type: "POST",
+                    url: "https://localhost:44344/api/Clientes/Salvar",
+                    data: JSON.stringify(Clientes),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        alert('Sucesso!');
+                        location.reload();
+                    },
+                    error: function (msg) {
+                        alert('error');
+                    }
+
+                });
+
+
+                //AdicionarLinhaTabela(Clientes.documento, Clientes.nome, Clientes.email, Clientes.telefone);
+                LimparCamposForm();
+            }
+        }
+
+        function AdicionarLinhaTabela(IdCliente, Documento, Nome, Email, Telefone) {
+            var linhaNova = '<tr id="Linha' + IdCliente + '"><td>';
+            linhaNova = linhaNova + IdCliente + '</td><td>' + Documento + '</td><td>' + Nome + '</td><td>' + Email + '</td><td>' + Telefone + '</td><td><a href="#" onclick="javascript:GetCliente(' + IdCliente + ');"  class="btn btn-info"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar</a><a href="#" onclick="javascript:RemoveLinha(' + IdCliente + ');" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir </a></td></tr>';
+
+            $("#ListaCadastro").prepend(linhaNova);
+            $('#myModal').modal().hide();
+        }
+
+        function LimparCamposForm() {
+            $("#Documento").val("");
+            $("#nome").val("");
+            $("#email").val("");
+            $("#telefone").val("");
+            $("#fax").val("");
+            $("#IdCliente").val("");
+        }
+
+        function RemoveLinha(IdCliente) {
+            $.ajax({
+                type: "DELETE",
+                url: "https://localhost:44344/api/Clientes/Deletar?IdCliente=" + IdCliente,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (OBJ) {
+                    alert('Item Removido Com Sucesso !!! ');
+                    $('#Linha' + IdCliente).remove();
+                },
+
+                error: function (OBJ) {
+                    alert('error');
+                }
+            });
+
+
+
+        }
+
+        function GetCliente(IdCliente) {
+
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:44344/api/Clientes/GetCliente?IdCliente=" + IdCliente,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (OBJ) {
+                    $('#myModal').modal().hide();
+                    $("#IdCliente").val(OBJ.idCliente);
+                    $("#Documento").val(OBJ.documento);
+                    $("input[name='sexo'][value='" + OBJ.sexo + "']").prop("checked", true);
+                    $("#nome").val(OBJ.nome);
+                    $("#email").val(OBJ.email);
+                    $("#telefone").val(OBJ.telefone);
+                    $("#fax").val(OBJ.fax);
+                    $("#uf").val(OBJ.uf);
+
+                },
+
+                error: function (OBJ) {
+                    alert('error');
+                }
+            });
+        }
+
+        // MÉTODO PARA LISTAGEM DE CLIENTES , É PASSADO UM OBJETO(QUE NO CONTROLLER É O OBJETO CLIENTE) , EM CADA INSTÂNCIA DO OBJETO É CHAMADO O MÉTODO DE ADICIONAR LINHA PARA POPULAR A TABELA NO FRONTEND
+
+        function ListarClientes() {
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:44344/api/Clientes/Listar",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (OBJ) {
+                    for (var i = 0; i < OBJ.length; i++) {
+
+                        AdicionarLinhaTabela(OBJ[i].idCliente, OBJ[i].documento, OBJ[i].nome, OBJ[i].email, OBJ[i].telefone);
+
+                    }
+
+                },
+                error: function (OBJ) {
+                    alert('error');
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
